@@ -43,30 +43,58 @@ body{
 
 /* Hero */
 .hero{
-    padding:120px 0 100px 0;
-    text-align:center;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:160px 0 130px 0;
+    gap:100px;
+    position:relative;
 }
 
-.hero h1{
-    font-size:42px;
+/* 极淡背景结构层 */
+.hero::before{
+    content:"";
+    position:absolute;
+    width:420px;
+    height:420px;
+    background:radial-gradient(circle, rgba(232,238,255,0.4) 0%, rgba(255,255,255,0) 70%);
+    top:-80px;
+    right:-80px;
+    z-index:0;
+}
+
+.hero-left,
+.hero-right{
+    position:relative;
+    z-index:1;
+}
+
+.hero-left h1{
+    font-size:48px;
     font-weight:300;
-    letter-spacing:1px;
-    margin-bottom:20px;
+    letter-spacing:2px;
+    margin-bottom:30px;
 }
 
-.hero p{
-    max-width:650px;
-    margin:0 auto;
-    line-height:1.8;
+.hero-left p{
+    font-size:18px;
+    line-height:2;
     color:#444;
+    max-width:520px;
 }
 
-/* Identity 渐变框 */
+.hero-right img{
+    width:380px;
+    border-radius:18px;
+    box-shadow:0 25px 60px rgba(0,0,0,0.1);
+}
+
+
 .identity-box{
-    margin:80px auto;
-    padding:35px;
-    max-width:900px;
-    border-radius:16px;
+    margin:100px auto;
+    padding:45px;
+    max-width:880px;
+    border-radius:18px;
     background:linear-gradient(
         135deg,
         #F6E7D8 0%,
@@ -75,8 +103,16 @@ body{
     );
     text-align:center;
     font-size:15px;
+    letter-spacing:2px;
+    color:#333;
+    box-shadow:0 15px 40px rgba(0,0,0,0.05);
+}
+
+.axo-note{
+    margin-top:25px;
+    font-size:13px;
     letter-spacing:1px;
-    color:#444;
+    color:#666;
 }
 
 /* 与Axonovax关系 */
@@ -87,39 +123,38 @@ body{
 }
 
 /* Carousel */
-.carousel-section{
-    padding:120px 0;
-}
-
 .carousel{
     position:relative;
     overflow:hidden;
+    padding:40px 0;
 }
 
 .carousel-track{
     display:flex;
-    transition:transform 0.6s ease;
+    align-items:center;
+    transition:transform 0.6s cubic-bezier(.77,0,.18,1);
 }
 
 .carousel-item{
-    min-width:400px;
-    margin:0 20px;
+    min-width:420px;
+    margin:0 25px;
     text-align:center;
-    opacity:0.5;
-    transform:scale(0.8);
-    transition:all 0.5s ease;
-}
-
-.carousel-item img{
-    width:100%;
-    border-radius:14px;
-    margin-bottom:20px;
+    opacity:0.35;
+    transform:scale(0.75);
+    transition:all 0.6s ease;
 }
 
 .carousel-item.active{
     opacity:1;
-    transform:scale(1);
+    transform:scale(1.05);
 }
+
+.carousel-item img{
+    width:100%;
+    border-radius:16px;
+    box-shadow:0 20px 50px rgba(0,0,0,0.08);
+}
+
 
 .nav{
     position:absolute;
@@ -156,9 +191,10 @@ body{
 /* Copyright */
 .copyright{
     text-align:center;
-    font-size:13px;
-    color:#777;
-    padding:60px 0 80px 0;
+    font-size:12px;
+    color:#888;
+    padding:80px 0 100px 0;
+    letter-spacing:1px;
 }
 
 /* 移动端 */
@@ -260,12 +296,32 @@ body{
 
 <div class="social-icons">
 
-<a href="#" target="_blank">IG</a>
-<a href="#" target="_blank">IN</a>
-<a href="#" target="_blank">YT</a>
-<a href="#" target="_blank">FB</a>
+<a href="#" target="_blank" aria-label="Instagram">
+<svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
+<path d="M7 2C4.8 2 3 3.8 3 6v12c0 2.2 1.8 4 4 4h10c2.2 0 4-1.8 4-4V6c0-2.2-1.8-4-4-4H7zm5 5.5A4.5 4.5 0 1112 16a4.5 4.5 0 010-9z"/>
+</svg>
+</a>
+
+<a href="#" target="_blank" aria-label="LinkedIn">
+<svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
+<path d="M4 3a2 2 0 100 4 2 2 0 000-4zm1 6H3v12h2V9zm4 0h-2v12h2v-6c0-3 4-3 4 0v6h2v-7c0-5-6-4-6 0V9z"/>
+</svg>
+</a>
+
+<a href="#" target="_blank" aria-label="YouTube">
+<svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
+<path d="M21 8s-.2-1.4-.8-2c-.7-.8-1.5-.8-1.9-.9C15.7 5 12 5 12 5h-.1s-3.7 0-6.3.1c-.4 0-1.2 0-1.9.9C3.2 6.6 3 8 3 8S3 9.6 3 11.3v1.4C3 14.4 3 16 3 16s.2 1.4.8 2c.7.8 1.7.8 2.1.9 1.5.1 6.1.1 6.1.1s3.7 0 6.3-.1c.4 0 1.2 0 1.9-.9.6-.6.8-2 .8-2s0-1.6 0-3.3v-1.4C21 9.6 21 8 21 8z"/>
+</svg>
+</a>
+
+<a href="#" target="_blank" aria-label="Facebook">
+<svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
+<path d="M13 3h4V0h-4c-3 0-5 2-5 5v3H5v4h3v9h4v-9h3l1-4h-4V5c0-1 .5-2 2-2z"/>
+</svg>
+</a>
 
 </div>
+
 
 </div>
 </section>
