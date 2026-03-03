@@ -20,7 +20,9 @@
 
 <style>
 
-/* 字体（细线条，不用黑体） */
+/* =========================
+   基础字体（细线条）
+========================= */
 body{
     font-family:
         "Helvetica Neue",
@@ -34,53 +36,53 @@ body{
     color:#222;
 }
 
-/* 容器 */
+/* =========================
+   背景系统（与全站统一）
+========================= */
+.zone-a { background:#FFFFFF; }
+.zone-b { background:#E8EEFF; }
+.zone-c { background:#EFE4FF; }
+.zone-d { background:#F8F9F6; }
+
+/* =========================
+   容器
+========================= */
 .container{
     width:90%;
-    max-width:1200px;
+    max-width:1100px;
     margin:0 auto;
 }
 
-/* Hero */
-.hero{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:160px 0 130px 0;
-    gap:100px;
-    position:relative;
-}
-
-/* 极淡背景结构层 */
+/* =========================
+   HERO
+========================= */
 .hero{
     display:flex;
     align-items:center;
     justify-content:center;
-    gap:60px;                /* 原来 100px，缩小 */
-    padding:110px 0 80px 0;  /* 上下压缩 */
-    max-width:1100px;        /* 限制整体宽度 */
-    margin:0 auto;
+    gap:60px;
+    padding:110px 0 80px 0;
 }
 
 .hero-left{
-    flex:0 0 460px;          /* 固定宽度，防止拉太开 */
+    flex:0 0 440px;
 }
 
 .hero-left h1{
-    font-size:44px;
+    font-size:42px;
     font-weight:300;
-    letter-spacing:1.5px;
-    margin-bottom:22px;
+    margin-bottom:20px;
+    letter-spacing:1px;
 }
 
 .hero-left p{
-    font-size:17px;
+    font-size:16px;
     line-height:1.8;
     color:#444;
 }
 
 .hero-right{
-    flex:0 0 360px;
+    flex:0 0 340px;
 }
 
 .hero-right img{
@@ -89,22 +91,14 @@ body{
     box-shadow:0 20px 50px rgba(0,0,0,0.08);
 }
 
-/* 移动端 */
-@media(max-width:900px){
-    .hero{
-        flex-direction:column;
-        text-align:center;
-        padding:80px 0 60px 0;
-    }
-}
-
-
-
+/* =========================
+   Identity
+========================= */
 .identity-box{
-    margin:100px auto;
-    padding:45px;
+    margin:70px auto 50px auto;
+    padding:40px;
     max-width:880px;
-    border-radius:18px;
+    border-radius:16px;
     background:linear-gradient(
         135deg,
         #F6E7D8 0%,
@@ -113,34 +107,24 @@ body{
     );
     text-align:center;
     font-size:15px;
-    letter-spacing:2px;
-    color:#333;
-    box-shadow:0 15px 40px rgba(0,0,0,0.05);
-}
-
-.identity-box{
-    margin:70px auto 50px auto;
+    letter-spacing:1.5px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.05);
 }
 
 .axo-note{
-    margin-top:25px;
-    font-size:13px;
-    letter-spacing:1px;
-    color:#666;
-}
-
-/* 与Axonovax关系 */
-.axo-note{
-    margin-top:20px;
+    margin-top:18px;
     font-size:13px;
     color:#666;
 }
 
-/* Carousel */
-.carousel{
+/* =========================
+   Carousel（核心修正版）
+========================= */
+.carousel-wrapper{
+    position:relative;
+    max-width:1100px;
+    margin:60px auto 60px auto;
     overflow:hidden;
-    max-width:1200px;
-    margin:60px auto;
 }
 
 .carousel-track{
@@ -151,14 +135,16 @@ body{
 }
 
 .carousel-item{
-    flex:0 0 520px;     /* 图片更大 */
-    margin:0 20px;
+    flex:0 0 520px;
+    margin:0 25px;
+    transition:all 0.5s ease;
     transform:scale(0.8);
-    transition:transform 0.6s ease;
+    opacity:0.6;
 }
 
 .carousel-item.active{
     transform:scale(1);
+    opacity:1;
 }
 
 .carousel-item img{
@@ -167,21 +153,42 @@ body{
     box-shadow:0 25px 60px rgba(0,0,0,0.08);
 }
 
+/* 左右按钮 */
+.nav{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    background:rgba(255,255,255,0.8);
+    border:none;
+    font-size:28px;
+    cursor:pointer;
+    padding:12px 16px;
+    border-radius:50%;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
 
-/* Social */
+.nav:hover{
+    background:white;
+}
+
+.prev{ left:10px; }
+.next{ right:10px; }
+
+/* =========================
+   Social
+========================= */
 .social-icons{
     text-align:center;
-    margin:50px 0 40px 0;
+    margin:40px 0 30px 0;
 }
 
 .social-icons a{
     display:inline-block;
-    margin:0 18px;
+    margin:0 16px;
 }
 
 .social-icons img{
-    width:32px;
-    height:auto;
+    width:34px;
     transition:transform 0.3s ease;
 }
 
@@ -189,25 +196,38 @@ body{
     transform:scale(1.15);
 }
 
-
-/* Copyright */
-
+/* =========================
+   Copyright
+========================= */
 .copyright{
     text-align:center;
-    font-size:24px;
+    font-size:14px;
     color:#777;
-    padding:40px 0 40px 0;   /* 压缩 */
+    padding:30px 0 40px 0;
 }
 
-
-/* 移动端 */
+/* =========================
+   移动端
+========================= */
 @media(max-width:900px){
+
+    .hero{
+        flex-direction:column;
+        text-align:center;
+        padding:80px 0 60px 0;
+    }
+
     .carousel-item{
-        min-width:280px;
+        flex:0 0 280px;
+    }
+
+    .nav{
+        display:none;
     }
 }
 
 </style>
+
 </head>
 
 <body>
@@ -253,10 +273,9 @@ body{
 
 
 <!-- CAROUSEL -->
-<section class="zone-b carousel-section">
-<div class="container">
+<section class="zone-b">
+<div class="carousel-wrapper">
 
-<div class="carousel">
 <button class="nav prev" onclick="moveSlide(-1)">&#10094;</button>
 
 <div class="carousel-track" id="carouselTrack">
@@ -266,7 +285,7 @@ body{
 </div>
 
 <div class="carousel-item">
-<img src="/assets/img/nutrpost-2.jpg">
+<img src="/assets/img/nutripost-2.jpg">
 </div>
 
 <div class="carousel-item">
@@ -280,14 +299,14 @@ body{
 </div>
 
 <button class="nav next" onclick="moveSlide(1)">&#10095;</button>
-</div>
 
 </div>
 </section>
 
 
+
 <!-- SOCIAL -->
- <section>
+
 <div class="social-icons">
 
 <a href="#" target="_blank">
@@ -308,7 +327,7 @@ body{
 
 </div>
 
-</section>
+
 
 
 <!-- COPYRIGHT -->
@@ -319,27 +338,45 @@ body{
 
 
 <script>
-const track = document.querySelector('.carousel-track');
+const track = document.getElementById('carouselTrack');
 const items = document.querySelectorAll('.carousel-item');
+
 let index = 0;
+let autoPlay;
 
 function updateCarousel(){
     items.forEach(item => item.classList.remove('active'));
     items[index].classList.add('active');
 
-    const itemWidth = items[0].offsetWidth + 40;
-    const offset = (index * itemWidth) - (itemWidth * 1);
-    track.style.transform = `translateX(-${offset}px)`;
+    const itemWidth = items[0].offsetWidth + 50;
+    const centerOffset = (track.offsetWidth - items[0].offsetWidth) / 2;
+    track.style.transform =
+        `translateX(${centerOffset - index * itemWidth}px)`;
 }
 
-function nextSlide(){
-    index = (index + 1) % items.length;
+function moveSlide(direction){
+    index = (index + direction + items.length) % items.length;
     updateCarousel();
+    resetAuto();
 }
 
-setInterval(nextSlide, 4000);
+function startAuto(){
+    autoPlay = setInterval(()=>{
+        moveSlide(1);
+    },4000);
+}
+
+function resetAuto(){
+    clearInterval(autoPlay);
+    startAuto();
+}
+
+window.addEventListener('resize', updateCarousel);
+
 updateCarousel();
+startAuto();
 </script>
+
 
 
  <!-- FOOTER -->
