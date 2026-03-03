@@ -52,42 +52,52 @@ body{
 }
 
 /* 极淡背景结构层 */
-.hero::before{
-    content:"";
-    position:absolute;
-    width:420px;
-    height:420px;
-    background:radial-gradient(circle, rgba(232,238,255,0.4) 0%, rgba(255,255,255,0) 70%);
-    top:-80px;
-    right:-80px;
-    z-index:0;
+.hero{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:60px;                /* 原来 100px，缩小 */
+    padding:110px 0 80px 0;  /* 上下压缩 */
+    max-width:1100px;        /* 限制整体宽度 */
+    margin:0 auto;
 }
 
-.hero-left,
-.hero-right{
-    position:relative;
-    z-index:1;
+.hero-left{
+    flex:0 0 460px;          /* 固定宽度，防止拉太开 */
 }
 
 .hero-left h1{
-    font-size:48px;
+    font-size:44px;
     font-weight:300;
-    letter-spacing:2px;
-    margin-bottom:30px;
+    letter-spacing:1.5px;
+    margin-bottom:22px;
 }
 
 .hero-left p{
-    font-size:18px;
-    line-height:2;
+    font-size:17px;
+    line-height:1.8;
     color:#444;
-    max-width:520px;
+}
+
+.hero-right{
+    flex:0 0 360px;
 }
 
 .hero-right img{
-    width:380px;
-    border-radius:18px;
-    box-shadow:0 25px 60px rgba(0,0,0,0.1);
+    width:100%;
+    border-radius:16px;
+    box-shadow:0 20px 50px rgba(0,0,0,0.08);
 }
+
+/* 移动端 */
+@media(max-width:900px){
+    .hero{
+        flex-direction:column;
+        text-align:center;
+        padding:80px 0 60px 0;
+    }
+}
+
 
 
 .identity-box{
@@ -108,6 +118,10 @@ body{
     box-shadow:0 15px 40px rgba(0,0,0,0.05);
 }
 
+.identity-box{
+    margin:70px auto 50px auto;
+}
+
 .axo-note{
     margin-top:25px;
     font-size:13px;
@@ -124,35 +138,33 @@ body{
 
 /* Carousel */
 .carousel{
-    position:relative;
     overflow:hidden;
-    padding:40px 0;
+    max-width:1200px;
+    margin:60px auto;
 }
 
 .carousel-track{
     display:flex;
     align-items:center;
-    transition:transform 0.6s cubic-bezier(.77,0,.18,1);
+    justify-content:center;
+    transition:transform 0.6s ease;
 }
 
 .carousel-item{
-    min-width:420px;
-    margin:0 25px;
-    text-align:center;
-    opacity:0.35;
-    transform:scale(0.75);
-    transition:all 0.6s ease;
+    flex:0 0 520px;     /* 图片更大 */
+    margin:0 20px;
+    transform:scale(0.8);
+    transition:transform 0.6s ease;
 }
 
 .carousel-item.active{
-    opacity:1;
-    transform:scale(1.05);
+    transform:scale(1);
 }
 
 .carousel-item img{
     width:100%;
-    border-radius:16px;
-    box-shadow:0 20px 50px rgba(0,0,0,0.08);
+    border-radius:18px;
+    box-shadow:0 25px 60px rgba(0,0,0,0.08);
 }
 
 
@@ -172,30 +184,36 @@ body{
 .nav:hover{ color:#000; }
 
 /* Social */
-.social-section{
-    padding:100px 0;
+.social-icons{
     text-align:center;
+    margin:50px 0 40px 0;
 }
 
 .social-icons a{
-    margin:0 20px;
     display:inline-block;
-    color:#666;
-    transition:0.3s;
+    margin:0 18px;
 }
 
-.social-icons a:hover{
-    color:#000;
+.social-icons img{
+    width:32px;
+    height:auto;
+    transition:transform 0.3s ease;
 }
+
+.social-icons img:hover{
+    transform:scale(1.15);
+}
+
 
 /* Copyright */
+
 .copyright{
     text-align:center;
     font-size:12px;
-    color:#888;
-    padding:80px 0 100px 0;
-    letter-spacing:1px;
+    color:#777;
+    padding:40px 0 40px 0;   /* 压缩 */
 }
+
 
 /* 移动端 */
 @media(max-width:900px){
@@ -204,14 +222,22 @@ body{
     }
 }
 
+.zone-a { background:#FFFFFF; }
+.zone-b { background:#E8EEFF; }
+.zone-c { background:#EFE4FF; }
+.zone-d { background:#F8F9F6; }
+
 </style>
 </head>
 
 <body>
 
 
+<section class="zone-a">Hero</section>
+<section class="zone-b">Carousel</section>
+<section class="zone-c">Identity</section>
+<section class="zone-d">Social</section>
 
-<!-- HERO -->
 <!-- HERO -->
 <section class="zone-a">
 <div class="container hero">
@@ -287,43 +313,26 @@ body{
 
 
 <!-- SOCIAL -->
-<section class="zone-a social-section">
-<div class="container">
-
-<h3 data-zh="内容发布平台"
-    data-en="Content Platforms">
-</h3>
-
 <div class="social-icons">
 
-<a href="#" target="_blank" aria-label="Instagram">
-<svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
-<path d="M7 2C4.8 2 3 3.8 3 6v12c0 2.2 1.8 4 4 4h10c2.2 0 4-1.8 4-4V6c0-2.2-1.8-4-4-4H7zm5 5.5A4.5 4.5 0 1112 16a4.5 4.5 0 010-9z"/>
-</svg>
+<a href="#" target="_blank">
+<img src="/assets/icons/instagram.webp" alt="Instagram">
 </a>
 
-<a href="#" target="_blank" aria-label="LinkedIn">
-<svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
-<path d="M4 3a2 2 0 100 4 2 2 0 000-4zm1 6H3v12h2V9zm4 0h-2v12h2v-6c0-3 4-3 4 0v6h2v-7c0-5-6-4-6 0V9z"/>
-</svg>
+<a href="#" target="_blank">
+<img src="/assets/icons/linkedin.png" alt="LinkedIn">
 </a>
 
-<a href="#" target="_blank" aria-label="YouTube">
-<svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
-<path d="M21 8s-.2-1.4-.8-2c-.7-.8-1.5-.8-1.9-.9C15.7 5 12 5 12 5h-.1s-3.7 0-6.3.1c-.4 0-1.2 0-1.9.9C3.2 6.6 3 8 3 8S3 9.6 3 11.3v1.4C3 14.4 3 16 3 16s.2 1.4.8 2c.7.8 1.7.8 2.1.9 1.5.1 6.1.1 6.1.1s3.7 0 6.3-.1c.4 0 1.2 0 1.9-.9.6-.6.8-2 .8-2s0-1.6 0-3.3v-1.4C21 9.6 21 8 21 8z"/>
-</svg>
+<a href="#" target="_blank">
+<img src="/assets/icons/youtube.png" alt="YouTube">
 </a>
 
-<a href="#" target="_blank" aria-label="Facebook">
-<svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24">
-<path d="M13 3h4V0h-4c-3 0-5 2-5 5v3H5v4h3v9h4v-9h3l1-4h-4V5c0-1 .5-2 2-2z"/>
-</svg>
+<a href="#" target="_blank">
+<img src="/assets/icons/facebook.png" alt="Facebook">
 </a>
 
 </div>
 
-
-</div>
 </section>
 
 
@@ -334,25 +343,27 @@ body{
 </div>
 
 
-
 <script>
-let currentIndex = 0;
+const track = document.querySelector('.carousel-track');
 const items = document.querySelectorAll('.carousel-item');
-const track = document.getElementById('carouselTrack');
+let index = 0;
 
 function updateCarousel(){
-    items.forEach(item=>item.classList.remove('active'));
-    items[currentIndex].classList.add('active');
-    const offset = (currentIndex * 440);
+    items.forEach(item => item.classList.remove('active'));
+    items[index].classList.add('active');
+
+    const itemWidth = items[0].offsetWidth + 40;
+    const offset = (index * itemWidth) - (itemWidth * 1);
     track.style.transform = `translateX(-${offset}px)`;
 }
 
-function moveSlide(direction){
-    currentIndex += direction;
-    if(currentIndex < 0) currentIndex = items.length -1;
-    if(currentIndex >= items.length) currentIndex = 0;
+function nextSlide(){
+    index = (index + 1) % items.length;
     updateCarousel();
 }
+
+setInterval(nextSlide, 4000);
+updateCarousel();
 </script>
 
 
