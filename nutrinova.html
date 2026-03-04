@@ -24,17 +24,17 @@
 /* =========================
    基础字体（细线条）
 ========================= */
-body{
-    font-family:
+body {
+    font-family: 
         "Helvetica Neue",
         "PingFang SC",
         "Hiragino Sans GB",
         "Microsoft YaHei Light",
         Arial,
         sans-serif;
-    font-weight:300;
-    margin:0;
-    color:#222;
+    font-weight: 300;
+    margin: 0;
+    color: #222;
 }
 
 /* =========================
@@ -48,101 +48,101 @@ body{
 /* =========================
    容器
 ========================= */
-.container{
-    width:90%;
-    max-width:1100px;
-    margin:0 auto;
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 /* =========================
    HERO
 ========================= */
-.hero{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;  /* Desktop: 图片与文字两侧对齐 */
-    gap:60px;  /* 控制文字与图片之间的间距 */
-    padding:110px 0 80px 0;
-    min-height:350px;  /* 保证有足够高度 */
-    height:auto;  /* 自动调整高度 */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Desktop: 图片与文字两侧对齐 */
+    gap: 60px; /* 控制文字与图片之间的间距 */
+    padding: 110px 0 80px 0;
+    min-height: 350px; /* 保证有足够高度 */
+    height: auto; /* 自动调整高度 */
 }
 
-.hero-left{
-    flex: 0 0 45%;  /* 文字部分宽度 */
+.hero-left {
+    flex: 0 0 45%; /* 文字部分宽度 */
 }
 
-.hero-left h1{
-    font-size:42px;
-    font-weight:300;
-    margin-bottom:15px;
-    letter-spacing:1px;
+.hero-left h1 {
+    font-size: 42px;
+    font-weight: 300;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
 }
 
-.hero-left p{
-    font-size:16px;
-    line-height:1.8;
-    color:#444;
+.hero-left p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #444;
 }
 
-.hero-right{
-    flex: 0 0 45%;  /* 图片部分宽度 */
-    background: #f2f2f2;  /* 设置背景色 */
-    border-radius:16px;  /* 圆角效果 */
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);  /* 添加阴影，增加立体感 */
-    padding:10px;  /* 添加内边距，避免图片贴边 */
+.hero-right {
+    flex: 0 0 45%; /* 图片部分宽度 */
+    background: #f2f2f2; /* 设置背景色 */
+    border-radius: 16px; /* 圆角效果 */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1); /* 添加阴影，增加立体感 */
+    padding: 10px; /* 添加内边距，避免图片贴边 */
 }
 
-.hero-right img{
-    width:100%;
-    height:auto;
-    display:block;
-    max-height:450px; /* 限制图片最大高度 */
-    border-radius:12px; /* 圆角效果 */
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);  /* 图片加阴影 */
+.hero-right img {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-height: 350px; /* 限制图片最大高度，确保不会过大 */
+    border-radius: 12px; /* 圆角效果 */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* 图片加阴影 */
 }
 
 /* =========================
    手机端优化：图片放在上面，文字放下面
 ========================= */
-@media (max-width:768px){
-  .hero{
-    flex-direction:column;   /* 手机端：将图片和文字垂直排列 */
-    align-items:center;      /* 居中 */
-    justify-content:flex-start;  /* 上对齐 */
-    padding:20px 15px;        /* 控制上下边距 */
-    gap:10px;                 /* 缩小图片和文字之间的间隙 */
-    min-height:300px;         /* 确保有足够空间 */
-  }
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column; /* 手机端：将图片和文字垂直排列 */
+        align-items: center; /* 居中 */
+        justify-content: flex-start; /* 上对齐 */
+        padding: 20px 15px; /* 控制上下边距 */
+        gap: 10px; /* 缩小图片和文字之间的间隙 */
+        min-height: 300px; /* 确保有足够空间 */
+    }
 
-  .hero-left{
-    width:100%;  /* 文字部分宽度 100% */
-    text-align:center;  /* 文字居中 */
-  }
+    .hero-left {
+        width: 100%; /* 文字部分宽度 100% */
+        text-align: center; /* 文字居中 */
+    }
 
-  .hero-left h1{
-    font-size:30px;   /* 手机端调整字体大小 */
-    margin-bottom:10px;
-  }
+    .hero-left h1 {
+        font-size: 30px; /* 手机端调整字体大小 */
+        margin-bottom: 10px;
+    }
 
-  .hero-left p{
-    font-size:14px;   /* 手机端调整段落字体 */
-    margin-top:0;
-    margin-bottom:0;
-  }
+    .hero-left p {
+        font-size: 14px; /* 手机端调整段落字体 */
+        margin-top: 0;
+        margin-bottom: 0;
+    }
 
-  .hero-right{
-    width:100%;  /* 图片部分宽度 100% */
-    margin-bottom:10px;  /* 图片和文字之间的小间距 */
-    height:auto;  /* 防止被裁剪 */
-  }
+    .hero-right {
+        width: 100%; /* 图片部分宽度 100% */
+        margin-bottom: 10px; /* 图片和文字之间的小间距 */
+        height: auto; /* 防止被裁剪 */
+    }
 
-  .hero-right img{
-    width:100%;
-    height:auto;
-    display:block;
-    max-height:none;  /* 解除最大高度限制 */
-    min-height:200px;  /* 设置最小高度，确保图片能显示 */
-  }
+    .hero-right img {
+        width: 100%;
+        height: auto;
+        display: block;
+        max-height: 300px; /* 设置最大高度以确保图片显示 */
+        min-height: 180px; /* 设置最小高度，确保图片能显示 */
+    }
 }
 
 
