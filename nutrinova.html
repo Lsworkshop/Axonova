@@ -18,6 +18,8 @@
   <script src="/assets/js/auth-nav.js" defer></script> 
   <script src="/assets/js/access.js" defer></script>
 
+
+
 <style>
 
 /* =========================
@@ -62,6 +64,7 @@ body{
     justify-content:center;
     gap:60px;
     padding:110px 0 80px 0;
+    min-height: 300px;  /* 设置最小高度，确保内容区域有足够空间 */
 }
 
 .hero-left{
@@ -101,7 +104,7 @@ body{
     justify-content:flex-start;  /* 使内容从上开始排列 */
     padding:20px 15px;           /* 控制整体间距 */
     gap:10px;                    /* 图片与文字之间保持合理的间隙 */
-    height:auto;                 /* 确保 Hero 高度自动适应 */
+    min-height: 300px;           /* 给 Hero 设置最小高度，防止没有空间 */
   }
 
   /* Hero 文字部分 */
@@ -134,8 +137,6 @@ body{
   }
 
 }
-
-
 
 
 /* =========================
