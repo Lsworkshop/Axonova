@@ -93,16 +93,17 @@ body{
     border-radius:16px;
     box-shadow:0 20px 50px rgba(0,0,0,0.08);
 }
+
 @media (max-width:768px){
   /* Hero 容器设置：确保有足够的空间 */
   .hero{
     display:flex;
     flex-direction:column;
     align-items:center;
-    justify-content:flex-start;  /* 内容从顶部开始排列 */
-    padding:20px 15px;           /* 控制整体间距 */
-    gap:10px;                    /* 控制图片与文字之间的间距 */
-    min-height:400px;            /* 确保 Hero 区域有足够的高度显示内容 */
+    justify-content:flex-start;  /* 使内容从上开始排列 */
+    padding:10px 15px;           /* 控制整体间距 */
+    gap:10px;                    /* 图片与文字之间保持合理的间隙 */
+    min-height:350px;            /* 设置较小的最小高度 */
     height:auto;                 /* 自适应高度 */
     overflow:visible;            /* 防止被裁切 */
   }
@@ -114,7 +115,7 @@ body{
 
   /* 文字的上下间距 */
   .hero-left h1{
-    margin-bottom:5px;  /* 减小标题和段落的间距 */
+    margin-bottom:5px;  /* 减少标题和段落的间距 */
   }
 
   .hero-left p{
@@ -126,6 +127,7 @@ body{
   .hero-right{
     width:100%;
     margin:0;           /* 去掉图片上方和下方的 margin */
+    display:block;
   }
 
   /* 强制图片显示，宽度100%，确保能够显示 */
@@ -133,11 +135,11 @@ body{
     width:100%;
     height:auto;
     display:block;
-    margin-top:10px;    /* 适当的间距 */
-    max-height:450px;   /* 防止图片过大 */
+    margin-top:5px;    /* 设置图片与文字的间距更紧凑 */
+    max-height:450px;   /* 限制图片的最大高度 */
   }
-}
 
+}
 
 
 /* =========================
