@@ -93,42 +93,48 @@ body{
 
 @media (max-width:768px){
 
-  /* 确保整个 Hero 不会被压缩 */
+  /* 确保 Hero 不会被压缩 */
   .hero{
     display:flex;
     flex-direction:column;
     align-items:center;
-    justify-content:center;
-    padding:20px 15px;  /* 稍微调整上下间距 */
-    gap:10px;  /* 控制上下间距 */
-    height:auto;  /* 确保有足够的高度显示图片 */
+    justify-content:flex-start;  /* 使内容从上开始排列 */
+    padding:20px 15px;           /* 控制整体间距 */
+    gap:10px;                    /* 图片与文字之间保持合理的间隙 */
+    height:auto;                 /* 确保 Hero 高度自动适应 */
   }
 
+  /* Hero 文字部分 */
   .hero-left{
     width:100%;
   }
 
+  /* 文字的上下间距 */
   .hero-left h1{
-    margin-bottom:8px;  /* 控制文字底部距离 */
+    margin-bottom:5px;  /* 降低标题与下一段文字的间距 */
   }
 
   .hero-left p{
-    margin-bottom:0;
+    margin-top:0;       /* 去掉段落上方的多余间距 */
+    margin-bottom:0;    /* 去掉段落下方的间距 */
   }
 
+  /* Hero 图片部分 */
   .hero-right{
     width:100%;
-    margin:0;
-    display:block;  /* 不使用 flex，避免压缩 */
+    margin:0;           /* 去掉图片上方和下方的 margin */
   }
 
-  /* 图片宽度全屏 */
+  /* 图片设置 */
   .hero-right img{
     width:100%;
     height:auto;
     display:block;
+    margin-top:10px;    /* 设置图片上方的少量间距，避免与文字直接接触 */
   }
+
 }
+
 
 
 
