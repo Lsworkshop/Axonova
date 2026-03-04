@@ -133,15 +133,18 @@ body{
   .hero-right{
     width:100%;  /* 图片部分宽度 100% */
     margin-bottom:10px;  /* 图片和文字之间的小间距 */
+    height:auto;  /* 防止被裁剪 */
   }
 
   .hero-right img{
     width:100%;
     height:auto;
     display:block;
-    max-height:350px;  /* 手机端调整图片最大高度 */
+    max-height:none;  /* 解除最大高度限制 */
+    min-height:200px;  /* 设置最小高度，确保图片能显示 */
   }
 }
+
 
 /* =========================
    Identity
