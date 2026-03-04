@@ -93,22 +93,39 @@ body{
 
 @media (max-width:768px){
 
+  /* 去掉所有上层 padding 干扰 */
+  .zone-a{
+    padding:0;
+  }
+
   .hero{
+    display:flex;
     flex-direction:column;
-    text-align:center;
-    padding:30px 15px;   /* ← 关键：缩小 */
+    align-items:center;
+    justify-content:center;
+    padding:30px 15px;
+    gap:20px;
+  }
+
+  .hero-left{
+    width:100%;
   }
 
   .hero-right{
-    margin-top:15px;     /* ← 原来可能是30+ */
+    width:100%;
+    display:block;       /* 不用flex，避免压缩 */
+    margin:0;
   }
 
   .hero-right img{
-    width:85%;
-    max-width:380px;
+    width:100%;
+    max-width:100%;
+    height:auto;
+    display:block;
   }
 
 }
+
 
 
 /* =========================
@@ -194,21 +211,21 @@ body{
 @media (max-width:768px){
 
   .carousel-item{
-    padding:0 8%;
+    min-width:100%;
+    padding:0;          /* 去掉左右留白 */
   }
 
-  .nav{
-    display:block;
-    font-size:20px;
-    padding:8px 12px;
-    background:white;
-    opacity:0.9;
+  .carousel-item img{
+    width:100%;
+    border-radius:0;    /* 手机去圆角更自然 */
   }
 
-  .prev{ left:8px; }
-  .next{ right:8px; }
+  .carousel-viewport{
+    overflow:hidden;
+  }
 
 }
+
 
 
 /* =========================
@@ -324,8 +341,8 @@ body{
 </span>
 
 <div class="axo-note"
-     data-zh="Axonovax 体系下的生命科学维度"
-     data-en="A Life Science Dimension within the Axonovax Framework">
+     data-zh="Axonova 体系下的生命科学维度"
+     data-en="A Life Science Dimension within the Axonova Framework">
 </div>
 
 </div>
