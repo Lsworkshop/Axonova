@@ -90,13 +90,15 @@ body {
     border-radius: 16px; /* 圆角效果 */
     box-shadow: 0 20px 40px rgba(0,0,0,0.1); /* 添加阴影，增加立体感 */
     padding: 10px; /* 添加内边距，避免图片贴边 */
+    height: auto; /* 设置高度自适应 */
 }
 
 .hero-right img {
     width: 100%;
     height: auto;
     display: block;
-    max-height: 350px; /* 限制图片最大高度，确保不会过大 */
+    max-height: none; /* 去掉高度限制 */
+    min-height: 200px; /* 设置最小高度 */
     border-radius: 12px; /* 圆角效果 */
     box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* 图片加阴影 */
 }
@@ -140,8 +142,8 @@ body {
         width: 100%;
         height: auto;
         display: block;
-        max-height: 300px; /* 设置最大高度以确保图片显示 */
-        min-height: 180px; /* 设置最小高度，确保图片能显示 */
+        max-height: none; /* 去掉最大高度限制 */
+        min-height: 200px; /* 设置最小高度，确保图片能显示 */
     }
 }
 
