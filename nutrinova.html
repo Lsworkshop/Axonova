@@ -21,7 +21,6 @@
 
 
 <style>
-
 /* =========================
    基础字体（细线条）
 ========================= */
@@ -60,21 +59,25 @@ body{
 ========================= */
 .hero{
     display:flex;
+    flex-direction:column;  /* 图片放上面，文字在下面 */
     align-items:center;
     justify-content:center;
-    gap:60px;
-    padding:110px 0 80px 0;
-    min-height: 300px;  /* 设置最小高度，确保内容区域有足够空间 */
+    gap:20px;  /* 增加图片和文字之间的间距 */
+    padding:50px 15px; /* 减少上下的空白 */
+    min-height:350px;
+    height:auto;
+    overflow:visible;
 }
 
 .hero-left{
-    flex:0 0 440px;
+    width:100%;
+    text-align:center;  /* 文字居中 */
 }
 
 .hero-left h1{
     font-size:42px;
     font-weight:300;
-    margin-bottom:20px;
+    margin-bottom:15px;  /* 增加文字和段落之间的间距 */
     letter-spacing:1px;
 }
 
@@ -85,60 +88,39 @@ body{
 }
 
 .hero-right{
-    flex:0 0 340px;
+    width:100%;
+    margin-bottom:10px;  /* 图片下方保持小间距 */
 }
 
 .hero-right img{
     width:100%;
-    border-radius:16px;
-    box-shadow:0 20px 50px rgba(0,0,0,0.08);
+    height:auto;
+    display:block;
+    margin-top:0;    /* 去掉图片与上方文字的多余空白 */
+    max-height:400px;  /* 设置最大高度，防止图片过大 */
 }
 
+/* 手机端调整 */
 @media (max-width:768px){
-  /* Hero 容器设置：确保有足够的空间 */
   .hero{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    justify-content:flex-start;  /* 使内容从上开始排列 */
-    padding:10px 15px;           /* 控制整体间距 */
-    gap:10px;                    /* 图片与文字之间保持合理的间隙 */
-    min-height:350px;            /* 设置较小的最小高度 */
-    height:auto;                 /* 自适应高度 */
-    overflow:visible;            /* 防止被裁切 */
+    padding:20px 15px;  /* 调整上下间距 */
+    gap:15px;  /* 缩小图片与文字的间隙 */
+    min-height:250px;  /* 设置较小的最小高度 */
   }
 
-  /* Hero 文字部分 */
-  .hero-left{
-    width:100%;
-  }
-
-  /* 文字的上下间距 */
   .hero-left h1{
-    margin-bottom:5px;  /* 减少标题和段落的间距 */
+    font-size:30px;  /* 缩小标题文字 */
+    margin-bottom:10px;  /* 减少文字间距 */
   }
 
   .hero-left p{
-    margin-top:0;       /* 去掉段落上方的多余间距 */
-    margin-bottom:0;    /* 去掉段落下方的多余间距 */
+    font-size:14px;  /* 调整文字大小 */
+    margin-bottom:0;  /* 去掉多余的下边距 */
   }
 
-  /* Hero 图片部分 */
-  .hero-right{
-    width:100%;
-    margin:0;           /* 去掉图片上方和下方的 margin */
-    display:block;
-  }
-
-  /* 强制图片显示，宽度100%，确保能够显示 */
   .hero-right img{
-    width:100%;
-    height:auto;
-    display:block;
-    margin-top:5px;    /* 设置图片与文字的间距更紧凑 */
-    max-height:450px;   /* 限制图片的最大高度 */
+    max-height:350px;  /* 适应手机屏幕的图片高度 */
   }
-
 }
 
 
@@ -321,26 +303,29 @@ body{
 <body>
 
 <!-- HERO -->
+<!-- HERO -->
 <section class="zone-a">
-<div class="container hero">
+  <div class="container hero">
 
-    <div class="hero-left">
-        <h1 data-zh="生命营养科学"
-            data-en="Life & Nutritional Science">
-            生命营养科学
-        </h1>
-
-        <p data-zh="基于科学研究与系统健康管理理念，探索营养认知与风险保障之间的长期价值。"
-           data-en="Grounded in scientific research and systemic health management, exploring the long-term value between nutrition insight and risk protection.">
-        </p>
-    </div>
-
+    <!-- Hero 图片部分 -->
     <div class="hero-right">
-        <img src="/assets/img/nutrihero.jpg" alt="NutriNova">
+      <img src="/assets/img/nutrihero.jpg" alt="NutriNova">
     </div>
-  
-</div>
+
+    <!-- Hero 文字部分 -->
+    <div class="hero-left">
+      <h1 data-zh="生命营养科学" data-en="Life & Nutritional Science">
+        生命营养科学
+      </h1>
+
+      <p data-zh="基于科学研究与系统健康管理理念，探索营养认知与风险保障之间的长期价值。" 
+         data-en="Grounded in scientific research and systemic health management, exploring the long-term value between nutrition insight and risk protection.">
+      </p>
+    </div>
+
+  </div>
 </section>
+
 
 
 <!-- IDENTITY -->
