@@ -94,30 +94,18 @@ body{
 @media (max-width:768px){
 
   .hero{
-    display:flex;
     flex-direction:column;
-    align-items:center;
-    justify-content:center;
-    padding:60px 20px;
-  }
-
-  .hero-left{
-    width:100%;
     text-align:center;
+    padding:30px 15px;   /* ← 关键：缩小 */
   }
 
   .hero-right{
-    width:100%;
-    margin-top:30px;
-    display:flex;
-    justify-content:center;
+    margin-top:15px;     /* ← 原来可能是30+ */
   }
 
   .hero-right img{
     width:85%;
-    max-width:420px;
-    height:auto;
-    display:block;
+    max-width:380px;
   }
 
 }
@@ -274,6 +262,29 @@ body{
         display:none;
     }
 }
+
+
+.zone-a{
+    padding:0;
+}
+
+@media (max-width:768px){
+
+  .nav{
+    display:flex !important;   /* 强制显示 */
+    align-items:center;
+    justify-content:center;
+    font-size:18px;
+    width:34px;
+    height:34px;
+    padding:0;
+  }
+
+  .prev{ left:6px; }
+  .next{ right:6px; }
+
+}
+
 
 </style>
 
