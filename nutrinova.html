@@ -93,38 +93,40 @@ body{
 
 @media (max-width:768px){
 
-  /* 去掉所有上层 padding 干扰 */
-  .zone-a{
-    padding:0;
-  }
-
   .hero{
     display:flex;
     flex-direction:column;
     align-items:center;
     justify-content:center;
-    padding:30px 15px;
-    gap:20px;
+    padding:25px 15px;   /* 整体间距缩小 */
+    gap:10px;            /* 控制文字和图片之间的距离 */
   }
 
   .hero-left{
     width:100%;
   }
 
+  .hero-left h1{
+    margin-bottom:8px;   /* 原来可能 20-30px */
+  }
+
+  .hero-left p{
+    margin-bottom:0;     /* 去掉默认段落大间距 */
+  }
+
   .hero-right{
     width:100%;
-    display:block;       /* 不用flex，避免压缩 */
-    margin:0;
+    margin:0;            /* 去掉 margin-top */
   }
 
   .hero-right img{
     width:100%;
-    max-width:100%;
     height:auto;
     display:block;
   }
 
 }
+
 
 
 
