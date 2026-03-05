@@ -58,188 +58,241 @@ body {
 ========================= */
 .hero {
     display: flex;
-    flex-direction: column; /* 图片放在文字上方 */
-    align-items: center; /* 居中 */
-    justify-content: flex-start; /* 上对齐 */
-    padding: 20px 15px; /* 控制上下边距 */
-    gap: 10px; /* 图片与文字之间的间隙 */
-    min-height: 350px; /* 保证有足够空间 */
+    align-items: center;
+    justify-content: space-between; /* Desktop: 图片与文字两侧对齐 */
+    gap: 60px; /* 控制文字与图片之间的间距 */
+    padding: 110px 0 80px 0;
 }
 
 .hero-left {
-    width: 100%; /* 文字部分宽度 100% */
-    text-align: center; /* 文字居中 */
+    flex: 0 0 440px;
 }
 
 .hero-left h1 {
-    font-size: 30px; /* 手机端调整字体大小 */
-    margin-bottom: 10px;
+    font-size: 42px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
 }
 
 .hero-left p {
-    font-size: 14px; /* 手机端调整段落字体 */
-    margin-top: 0;
-    margin-bottom: 0;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #444;
 }
 
 .hero-right {
-    width: 100%; /* 图片部分宽度 100% */
-    margin-bottom: 10px; /* 图片和文字之间的小间距 */
-    height: 250px; /* 限制图片高度 */
-    overflow: hidden; /* 防止图片超出容器 */
+    flex: 0 0 340px;
 }
 
 .hero-right img {
     width: 100%;
-    height: 100%; /* 图片填满容器 */
-    object-fit: contain; /* 保持图片比例，填满容器 */
+    border-radius: 16px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.08);
 }
 
 /* =========================
-   Desktop: 图片和文字保持原布局
+   手机端优化：图片放在上面，文字放下面
 ========================= */
-@media (min-width: 768px) {
+@media (max-width: 768px) {
     .hero {
-        flex-direction: row; /* 图片和文字水平排列 */
-        justify-content: space-between; /* 图片和文字左右对齐 */
-        gap: 60px; /* 控制图片与文字之间的间距 */
-        padding: 110px 0 80px 0;
+        flex-direction: column; /* 手机端：将图片和文字垂直排列 */
+        align-items: center; /* 居中 */
+        justify-content: flex-start; /* 上对齐 */
+        padding: 20px 15px; /* 控制上下边距 */
+        gap: 10px; /* 缩小图片和文字之间的间隙 */
+        min-height: 350px; /* 确保有足够空间 */
     }
 
     .hero-left {
-        flex: 0 0 440px;
+        width: 100%; /* 文字部分宽度 100% */
+        text-align: center; /* 文字居中 */
     }
 
     .hero-left h1 {
-        font-size: 42px;
-        font-weight: 300;
-        margin-bottom: 20px;
-        letter-spacing: 1px;
+        font-size: 30px; /* 手机端调整字体大小 */
+        margin-bottom: 10px;
     }
 
     .hero-left p {
-        font-size: 16px;
-        line-height: 1.8;
-        color: #444;
+        font-size: 14px; /* 手机端调整段落字体 */
+        margin-top: 0;
+        margin-bottom: 0;
     }
 
     .hero-right {
-        flex: 0 0 340px;
+        width: 100%; /* 图片部分宽度 100% */
+        margin-bottom: 10px; /* 图片和文字之间的小间距 */
+        height: 250px; /* 限制图片高度 */
+        overflow: hidden; /* 防止图片超出容器 */
     }
 
     .hero-right img {
         width: 100%;
-        border-radius: 16px;
-        box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+        height: 100%; /* 图片填满容器 */
+        object-fit: contain; /* 保持图片比例，填满容器 */
     }
+
+    /* 移动端：将箭头放置在图片下方 */
+    .carousel-wrapper {
+        position: relative;
+        margin-top: 10px; /* 图片下方箭头间距 */
+    }
+
+    .nav {
+        top: 50%;
+        transform: translateY(-50%);
+        background: white;
+        border: none;
+        font-size: 26px;
+        padding: 10px 15px;
+        border-radius: 50%;
+        cursor: pointer;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        z-index: 10;
+    }
+
+    .prev {
+        left: 10px; /* 左箭头位置 */
+    }
+
+    .next {
+        right: 10px; /* 右箭头位置 */
+    }
+}
+
+
+/* =========================
+   Identity
+========================= */
+.identity-box{
+    margin:70px auto 50px auto;
+    padding:40px;
+    max-width:880px;
+    border-radius:16px;
+    background:linear-gradient(
+        135deg,
+        #F6E7D8 0%,
+        #FAF1E6 50%,
+        #FFF9F2 100%
+    );
+    text-align:center;
+    font-size:15px;
+    letter-spacing:1.5px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.05);
+}
+
+.axo-note{
+    margin-top:18px;
+    font-size:13px;
+    color:#666;
 }
 
 /* =========================
    Carousel（核心修正版）
 ========================= */
-.carousel-wrapper {
-    position: relative;
-    margin: 60px auto;
+.carousel-wrapper{
+    position:relative;
+    margin:60px auto;
 }
 
-.carousel-viewport {
-    overflow: hidden;
-    width: 100%;
+.carousel-viewport{
+    overflow:hidden;
+    width:100%;
 }
 
-.carousel-track {
-    display: flex;
-    transition: transform 0.5s ease;
+.carousel-track{
+    display:flex;
+    transition:transform 0.5s ease;
 }
 
-.carousel-item {
-    min-width: 100%;
-    box-sizing: border-box;
-    padding: 0 10%;
-    transition: transform 0.4s ease, opacity 0.4s ease;
+.carousel-item{
+    min-width:100%;
+    box-sizing:border-box;
+    padding:0 10%;
+    transition:transform 0.4s ease, opacity 0.4s ease;
 }
 
-.carousel-item img {
-    width: 100%;
-    border-radius: 18px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+.carousel-item img{
+    width:100%;
+    border-radius:18px;
+    box-shadow:0 20px 50px rgba(0,0,0,0.08);
 }
 
 /* 箭头 */
-.nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: white;
-    border: none;
-    font-size: 26px;
-    padding: 10px 15px;
-    border-radius: 50%;
-    cursor: pointer;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-    z-index: 10;
+.nav{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    background:white;
+    border:none;
+    font-size:26px;
+    padding:10px 15px;
+    border-radius:50%;
+    cursor:pointer;
+    box-shadow:0 5px 15px rgba(0,0,0,0.15);
+    z-index:10;
 }
 
-.prev {
-    left: -20px;
-}
+.prev{ left:-20px; }
+.next{ right:-20px; }
 
-.next {
-    right: -20px;
-}
-
-.nav:hover {
-    background: #f5f5f5;
+.nav:hover{
+    background:#f5f5f5;
 }
 
 /* 手机优化 */
-@media (max-width: 768px) {
-    .carousel-item {
-        min-width: 100%;
-        padding: 0; /* 去掉左右留白 */
-    }
+@media (max-width:768px){
 
-    .carousel-item img {
-        width: 100%;
-        border-radius: 0; /* 手机去圆角更自然 */
-    }
+  .carousel-item{
+    min-width:100%;
+    padding:0;          /* 去掉左右留白 */
+  }
 
-    .carousel-viewport {
-        overflow: hidden;
-    }
+  .carousel-item img{
+    width:100%;
+    border-radius:0;    /* 手机去圆角更自然 */
+  }
+
+  .carousel-viewport{
+    overflow:hidden;
+  }
+
 }
 
 /* =========================
    Social
 ========================= */
-.social-icons {
-    text-align: center;
-    margin: 40px 0 30px 0;
+.social-icons{
+    text-align:center;
+    margin:40px 0 30px 0;
 }
 
-.social-icons a {
-    display: inline-block;
-    margin: 0 16px;
+.social-icons a{
+    display:inline-block;
+    margin:0 16px;
 }
 
-.social-icons img {
-    width: 34px;
-    transition: transform 0.3s ease;
+.social-icons img{
+    width:34px;
+    transition:transform 0.3s ease;
 }
 
-.social-icons img:hover {
-    transform: scale(1.15);
+.social-icons img:hover{
+    transform:scale(1.15);
 }
 
 /* =========================
    Copyright
 ========================= */
-.copyright {
-    text-align: center;
-    font-size: 14px;
-    color: #777;
-    padding: 30px 0 40px 0;
+.copyright{
+    text-align:center;
+    font-size:14px;
+    color:#777;
+    padding:30px 0 40px 0;
 }
+
+
 
 </style>
 
