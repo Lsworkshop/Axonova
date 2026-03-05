@@ -23,17 +23,17 @@
 /* =========================
    基础字体（细线条）
 ========================= */
-body {
-    font-family: 
+body{
+    font-family:
         "Helvetica Neue",
         "PingFang SC",
         "Hiragino Sans GB",
         "Microsoft YaHei Light",
         Arial,
         sans-serif;
-    font-weight: 300;
-    margin: 0;
-    color: #222;
+    font-weight:300;
+    margin:0;
+    color:#222;
 }
 
 /* =========================
@@ -47,120 +47,69 @@ body {
 /* =========================
    容器
 ========================= */
-.container {
-    width: 90%;
-    max-width: 1100px;
-    margin: 0 auto;
+.container{
+    width:90%;
+    max-width:1100px;
+    margin:0 auto;
 }
 
 /* =========================
    HERO
 ========================= */
-.hero {
-    display: flex;
-    align-items: center;
-    justify-content: space-between; /* Desktop: 图片与文字两侧对齐 */
-    gap: 60px; /* 控制文字与图片之间的间距 */
-    padding: 110px 0 80px 0;
+.hero{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:60px;
+    padding:110px 0 80px 0;
 }
 
-.hero-left {
-    flex: 0 0 440px;
+.hero-left{
+    flex:0 0 440px;
 }
 
-.hero-left h1 {
-    font-size: 42px;
-    font-weight: 300;
-    margin-bottom: 20px;
-    letter-spacing: 1px;
+.hero-left h1{
+    font-size:42px;
+    font-weight:300;
+    margin-bottom:20px;
+    letter-spacing:1px;
 }
 
-.hero-left p {
-    font-size: 16px;
-    line-height: 1.8;
-    color: #444;
+.hero-left p{
+    font-size:16px;
+    line-height:1.8;
+    color:#444;
 }
 
-.hero-right {
-    flex: 0 0 340px;
+.hero-right{
+    flex:0 0 340px;
 }
 
-.hero-right img {
-    width: 100%;
-    border-radius: 16px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+.hero-right img{
+    width:100%;
+    border-radius:16px;
+    box-shadow:0 20px 50px rgba(0,0,0,0.08);
 }
 
-/* =========================
-   手机端优化：图片放在上面，文字放下面
-========================= */
-@media (max-width: 768px) {
-    .hero {
-        flex-direction: column; /* 手机端：将图片和文字垂直排列 */
-        align-items: center; /* 居中 */
-        justify-content: flex-start; /* 上对齐 */
-        padding: 20px 15px; /* 控制上下边距 */
-        gap: 10px; /* 缩小图片和文字之间的间隙 */
-        min-height: 350px; /* 确保有足够空间 */
+@media(max-width:768px){
+
+    .hero{
+        flex-direction:column;
+        text-align:center;
+        padding:70px 0 50px 0;
     }
 
-    .hero-left {
-        width: 100%; /* 文字部分宽度 100% */
-        text-align: center; /* 文字居中 */
+    .hero-left,
+    .hero-right{
+        flex:unset;
+        width:100%;
     }
 
-    .hero-left h1 {
-        font-size: 30px; /* 手机端调整字体大小 */
-        margin-bottom: 10px;
-    }
-
-    .hero-left p {
-        font-size: 14px; /* 手机端调整段落字体 */
-        margin-top: 0;
-        margin-bottom: 0;
-    }
-
-    .hero-right {
-        width: 100%; /* 图片部分宽度 100% */
-        margin-bottom: 10px; /* 图片和文字之间的小间距 */
-        height: 250px; /* 限制图片高度 */
-        overflow: hidden; /* 防止图片超出容器 */
-    }
-
-    .hero-right img {
-        width: 100%;
-        height: 100%; /* 图片填满容器 */
-        object-fit: contain; /* 保持图片比例，填满容器 */
-    }
-
-    /* 移动端：将箭头放置在图片下方 */
-    .carousel-wrapper {
-        position: relative;
-        margin-top: 10px; /* 图片下方箭头间距 */
-    }
-
-    .nav {
-        top: 50%;
-        transform: translateY(-50%);
-        background: white;
-        border: none;
-        font-size: 26px;
-        padding: 10px 15px;
-        border-radius: 50%;
-        cursor: pointer;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-        z-index: 10;
-    }
-
-    .prev {
-        left: 10px; /* 左箭头位置 */
-    }
-
-    .next {
-        right: 10px; /* 右箭头位置 */
+    .hero-right img{
+        width:80%;
+        margin-top:30px;
     }
 }
-
 
 /* =========================
    Identity
