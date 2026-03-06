@@ -23,34 +23,28 @@
 /* =========================
    基础字体（细线条）
 ========================= */
-body{
-    font-family:
-        "Helvetica Neue",
-        "PingFang SC",
-        "Hiragino Sans GB",
-        "Microsoft YaHei Light",
-        Arial,
-        sans-serif;
-    font-weight:300;
-    margin:0;
-    color:#222;
+body {
+    font-family: "Helvetica Neue", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei Light", Arial, sans-serif;
+    font-weight: 300;
+    margin: 0;
+    color: #222;
 }
 
 /* =========================
    背景系统（与全站统一）
 ========================= */
-.zone-a { background:#FFFFFF; }
-.zone-b { background:#E8EEFF; }
-.zone-c { background:#EFE4FF; }
-.zone-d { background:#F8F9F6; }
+.zone-a { background: #FFFFFF; }
+.zone-b { background: #E8EEFF; }
+.zone-c { background: #EFE4FF; }
+.zone-d { background: #F8F9F6; }
 
 /* =========================
    容器
 ========================= */
-.container{
-    width:90%;
-    max-width:1100px;
-    margin:0 auto;
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 /* =========================
@@ -59,7 +53,7 @@ body{
 .large-image-section {
     margin: 60px 0;
     padding: 0;
-    background-color: #E8EEFF;  /* 背景色可根据需求进行调整 */
+    background-color: #E8EEFF; /* 背景色可根据需求进行调整 */
 }
 
 .large-image-section .container {
@@ -69,10 +63,10 @@ body{
 }
 
 .large-image {
-    width: 100%;  /* 确保图片宽度100%，与容器一致 */
+    width: 100%; /* 确保图片宽度100%，与容器一致 */
     height: auto;
-    border-radius: 16px;  /* 可选，增加圆角效果 */
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);  /* 添加阴影效果 */
+    border-radius: 16px; /* 可选，增加圆角效果 */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08); /* 添加阴影效果 */
 }
 
 /* 手机优化 */
@@ -83,161 +77,157 @@ body{
     }
 }
 
-
 /* =========================
    HERO
 ========================= */
-.hero{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:60px;
-    padding:110px 0 80px 0;
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+    padding: 110px 0 80px 0;
 }
 
-.hero-left{
-    flex:0 0 440px;
+.hero-left {
+    flex: 0 0 440px;
 }
 
-.hero-left h1{
-    font-size:42px;
-    font-weight:300;
-    margin-bottom:20px;
-    letter-spacing:1px;
+.hero-left h1 {
+    font-size: 42px;
+    font-weight: 300;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
 }
 
-.hero-left p{
-    font-size:16px;
-    line-height:1.8;
-    color:#444;
+.hero-left p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #444;
 }
 
-.hero-right{
-    flex:0 0 340px;
+.hero-right {
+    flex: 0 0 340px;
 }
 
-.hero-right img{
-    width:100%;
-    border-radius:16px;
-    box-shadow:0 20px 50px rgba(0,0,0,0.08);
+.hero-right img {
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
 }
 
-@media(max-width:768px){
-
-    .hero{
-        flex-direction:column;
-        text-align:center;
-        padding:70px 0 50px 0;
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 70px 0 50px 0;
     }
 
     .hero-left,
-    .hero-right{
-        flex:unset;
-        width:100%;
+    .hero-right {
+        flex: unset;
+        width: 100%;
     }
 
-    .hero-right img{
-        width:80%;
-        margin-top:30px;
+    .hero-right img {
+        width: 80%;
+        margin-top: 30px;
     }
 }
 
 /* =========================
    Identity
 ========================= */
-.identity-box{
-    margin:70px auto 50px auto;
-    padding:40px;
-    max-width:880px;
-    border-radius:16px;
-    background:linear-gradient(
-        135deg,
-        #F6E7D8 0%,
-        #FAF1E6 50%,
-        #FFF9F2 100%
-    );
-    text-align:center;
-    font-size:15px;
-    letter-spacing:1.5px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.05);
+.identity-box {
+    margin: 70px auto 50px auto;
+    padding: 40px;
+    max-width: 880px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, #F6E7D8 0%, #FAF1E6 50%, #FFF9F2 100%);
+    text-align: center;
+    font-size: 15px;
+    letter-spacing: 1.5px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
 }
 
-.axo-note{
-    margin-top:18px;
-    font-size:13px;
-    color:#666;
+.axo-note {
+    margin-top: 18px;
+    font-size: 13px;
+    color: #666;
 }
 
 /* =========================
    Carousel（核心修正版）
 ========================= */
-.carousel-wrapper{
-    position:relative;
-    margin:60px auto;
+.carousel-wrapper {
+    position: relative;
+    margin: 60px auto;
 }
 
-.carousel-viewport{
-    overflow:hidden;
-    width:100%;
+.carousel-viewport {
+    overflow: hidden;
+    width: 100%;
 }
 
-.carousel-track{
-    display:flex;
-    transition:transform 0.5s ease;
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
 }
 
-.carousel-item{
-    min-width:100%;
-    box-sizing:border-box;
-    padding:0 10%;
-    transition:transform 0.4s ease, opacity 0.4s ease;
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 0 10%;
+    transition: transform 0.4s ease, opacity 0.4s ease;
 }
 
-.carousel-item img{
-    width:100%;
-    border-radius:18px;
-    box-shadow:0 20px 50px rgba(0,0,0,0.08);
+.carousel-item img {
+    width: 100%;
+    border-radius: 18px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
 }
 
 /* 箭头 */
-.nav{
-    position:absolute;
-    top:50%;
-    transform:translateY(-50%);
-    background:white;
-    border:none;
-    font-size:26px;
-    padding:10px 15px;
-    border-radius:50%;
-    cursor:pointer;
-    box-shadow:0 5px 15px rgba(0,0,0,0.15);
-    z-index:10;
+.nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: white;
+    border: none;
+    font-size: 26px;
+    padding: 10px 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    z-index: 10;
 }
 
-.prev{ left:-20px; }
-.next{ right:-20px; }
+.prev {
+    left: -20px;
+}
 
-.nav:hover{
-    background:#f5f5f5;
+.next {
+    right: -20px;
+}
+
+.nav:hover {
+    background: #f5f5f5;
 }
 
 /* 手机优化 */
-@media (max-width:768px){
+@media (max-width: 768px) {
+    .carousel-item {
+        min-width: 100%;
+        padding: 0; /* 去掉左右留白 */
+    }
 
-  .carousel-item{
-    min-width:100%;
-    padding:0;          /* 去掉左右留白 */
-  }
+    .carousel-item img {
+        width: 100%;
+        border-radius: 0; /* 手机去圆角更自然 */
+    }
 
-  .carousel-item img{
-    width:100%;
-    border-radius:0;    /* 手机去圆角更自然 */
-  }
-
-  .carousel-viewport{
-    overflow:hidden;
-  }
-
+    .carousel-viewport {
+        overflow: hidden;
+    }
 }
 
 /* =========================
@@ -287,14 +277,12 @@ body{
 /* =========================
    Copyright
 ========================= */
-.copyright{
-    text-align:center;
-    font-size:14px;
-    color:#777;
-    padding:30px 0 40px 0;
+.copyright {
+    text-align: center;
+    font-size: 14px;
+    color: #777;
+    padding: 30px 0 40px 0;
 }
-
-
 
 </style>
 
