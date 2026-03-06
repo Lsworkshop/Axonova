@@ -54,6 +54,37 @@ body{
 }
 
 /* =========================
+   新增的大图Section（在Hero之前）
+========================= */
+.large-image-section {
+    margin: 60px 0;
+    padding: 0;
+    background-color: #E8EEFF;  /* 背景色可根据需求进行调整 */
+}
+
+.large-image-section .container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.large-image {
+    width: 100%;  /* 确保图片宽度100%，与容器一致 */
+    height: auto;
+    border-radius: 16px;  /* 可选，增加圆角效果 */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);  /* 添加阴影效果 */
+}
+
+/* 手机优化 */
+@media (max-width: 768px) {
+    .large-image {
+        width: 100%;  /* 在手机上图片占据100%的宽度 */
+        border-radius: 0; /* 可根据需求调整是否保留圆角 */
+    }
+}
+
+
+/* =========================
    HERO
 ========================= */
 .hero{
@@ -270,6 +301,31 @@ body{
 </head>
 
 <body>
+
+
+  <!-- Hero之前的大图Section -->
+<section class="zone-b large-image-section">
+    <div class="container">
+        <img src="/assets/img/nutripost-1.jpg" alt="大图" class="large-image">
+    </div>
+</section>
+
+<!-- Hero -->
+<section class="zone-a">
+    <div class="container hero">
+        <div class="hero-left">
+            <h1 data-zh="生命营养科学" data-en="Life & Nutritional Science">
+                生命营养科学
+            </h1>
+            <p data-zh="基于科学研究与系统健康管理理念，探索营养认知与风险保障之间的长期价值。" 
+               data-en="Grounded in scientific research and systemic health management, exploring the long-term value between nutrition insight and risk protection.">
+            </p>
+        </div>
+        <div class="hero-right">
+            <img src="/assets/img/nutrihero.jpg" alt="NutriNova">
+        </div>
+    </div>
+</section>
 
 <!-- HERO -->
 <section class="zone-a">
